@@ -1,6 +1,10 @@
 const fs = require("fs");
+const path = require("path");
 
-const caloriesByElf = fs.readFileSync("Day01/input.txt", "utf8");
+const caloriesByElf = fs.readFileSync(
+  path.join(__dirname, "input.txt"),
+  "utf-8"
+);
 const sum = (prev, curr) => prev + curr;
 
 let sortedElves = caloriesByElf

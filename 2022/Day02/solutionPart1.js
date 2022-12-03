@@ -1,6 +1,7 @@
 const fs = require("fs");
+const path = require("path");
 
-const gameplay = fs.readFileSync("Day02/input.txt", "utf-8");
+const gameplay = fs.readFileSync(path.join(__dirname, "input.txt"), "utf-8");
 const games = gameplay.split("\n");
 
 let totalScore = 0;

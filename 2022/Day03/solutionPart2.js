@@ -1,6 +1,10 @@
 const fs = require("fs");
+const path = require("path");
 
-const listOfContent = fs.readFileSync("Day03/input.txt", "utf-8");
+const listOfContent = fs.readFileSync(
+  path.join(__dirname, "input.txt"),
+  "utf-8"
+);
 const contentItems = listOfContent.split("\n");
 
 let priority = 0;
