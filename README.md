@@ -1,4 +1,5 @@
-# Advent Of Code
-Repo for Advent Of Code tasks. 
+# 🎄 Advent Of Code
+My solutions to the [Advent Of Code](https://adventofcode.com) challenges.
 
-The somewhat different advent calendar: https://adventofcode.com
+Advent Of Code - The somewhat different advent calendar 
+🎁
