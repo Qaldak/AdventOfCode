@@ -3,7 +3,7 @@ const { readInputFile } = require("../helper");
 const assignments = readInputFile(__dirname);
 const pairs = assignments.split("\n");
 
-let fullyContained = 0;
+let overlappedSections = 0;
 
 for (let pair of pairs) {
   let comma = pair.indexOf(",");
@@ -14,15 +14,18 @@ for (let pair of pairs) {
   let sectionTwo = getSectionValues(p2);
 
   if (
-    (sectionOne.start <= sectionTwo.start &&
-      sectionOne.end >= sectionTwo.end) ||
-    (sectionTwo.start <= sectionOne.start && sectionTwo.end >= sectionOne.end)
+    (sectionOne.start >= sectionTwo.start &&
+      sectionOne.start <= sectionTwo.end) ||
+    (sectionOne.end <= sectionTwo.end && sectionOne.end >= sectionTwo.start) ||
+    (sectionTwo.start >= sectionOne.start &&
+      sectionTwo.start <= sectionOne.end) ||
+    (sectionTwo.end <= sectionOne.end && sectionTwo.end >= sectionOne.start)
   ) {
-    fullyContained = fullyContained + 1;
+    overlappedSections = overlappedSections + 1;
   }
 }
 
-console.log("Fully contained: " + fullyContained);
+console.log("Sections overlapped: " + overlappedSections);
 
 function getSectionValues(string) {
   let splitter = string.indexOf("-");
