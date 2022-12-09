@@ -1,4 +1,3 @@
-const { arrayBuffer } = require("stream/consumers");
 const { readInputFile } = require("../helper");
 
 const inputList = readInputFile(__dirname).split("\n");
